@@ -1,0 +1,398 @@
+Lab 1:
+Question no 1:
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package arradd;
+import java.util.Scanner;
+/**
+ *
+ * @author fa16-bse-187
+ */
+public class Arradd {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        
+           int n, sum = 0;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter no. of elements you want in array:");
+        n = s.nextInt();
+        int a[] = new int[n];
+        System.out.println("Enter all the elements:");
+        for(int i = 0; i < n; i++)
+        {
+            a[i] = s.nextInt();
+            sum = sum + a[i];
+        }
+        System.out.println("Sum:"+sum);
+        // TODO code application logic here
+    }
+    
+}
+Question no 2:
+
+package calculator;
+import java.util.Scanner;
+/**
+ *
+ * @author fa16-bse-187
+ */
+public class Calculator {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        Scanner reader = new Scanner(System.in);
+        System.out.print("Enter two numbers: ");
+        // nextDouble() reads the next double from the keyboard
+        double first = reader.nextDouble();
+        double second = reader.nextDouble();
+        System.out.print("Enter an operator (+, -, *, /): ");
+        char operator = reader.next().charAt(0);
+        double result;
+        switch(operator)
+        {
+            case '+':
+                result = first + second;
+                break;
+            case '-':
+                result = first - second;
+                break;
+            case '*':
+                result = first * second;
+                break;
+            case '/':
+                result = first / second;
+                break;
+            // operator doesn't match any case constant (+, -, *, /)
+            default:
+                System.out.printf("Error! operator is not correct");
+                return;
+        }
+        System.out.printf("%.1f %c %.1f = %.1f", first, operator, second, result);
+    }
+}
+   Question no 3:
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package fabi;
+import java.util.Scanner;
+/**
+ *
+ * @author fa16-bse-187
+ */
+public class Fabi {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+                int n, a = 0, b = 0, c = 1;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter  value of n:");
+              n = s.nextInt();
+        System.out.print("Fibonacci Series:");
+        for(int i = 1; i <= n; i++)
+        {
+            a = b;
+            b = c;
+            c = a + b;
+            System.out.print(a+" ");
+        }
+    }
+    
+}
+Question no 4:
+
+package pali;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author fa16-bse-187
+ */
+public class Pali {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+          Scanner reader = new Scanner(System.in);
+             System.out.print("Enter nuber to check palidrome or not");
+                 int n = reader.nextInt();
+                 int r,sum=0,temp;
+                 temp=n;
+                 while(n>0){
+                     r=n%10;
+                     sum=(sum*10)+r;
+                     n=n/10;
+                     
+                 }
+                 if(temp==sum)
+                         System.out.println("palindrom numbers");
+                 else
+                        System.out.println("not palindrom numbers");
+                 
+        
+      
+    }
+    
+}
+
+
+Lab2:
+ 
+    
+Qestion no 1:
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package q1;
+
+/**
+ *
+ * @author fa16-bse-187
+ */
+public class Q1 {
+
+   
+    public static void main(String[] args) {
+        String a="zeeb";
+        String b="a.touppercase";
+        System.out.println(a);
+            
+       
+    
+  
+    }
+    
+}
+Qestion no 2:
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package q2;
+
+/**
+ *
+ * @author fa16-bse-187
+ */
+public class Q2 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+      String a="zeeb";
+       a.toUpperCase();
+               System.out.println(a);
+            
+       
+    }
+    
+}
+
+
+Qestion no 3:
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package q3;
+
+/**
+ *
+ * @author fa16-bse-187
+ */
+public class Q3 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+      String a="zeeb";
+        a=a.toUpperCase();
+        System.out.println(a);
+            
+       
+    }
+    
+}
+
+Qestion no 4:
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package q4;
+
+import java.util.Vector;
+
+/**
+ *
+ * @author fa16-bse-187
+ */
+public class Q4 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+      Vector v=new Vector();
+      Vector k=v;
+      String a="zeeb";
+      v.add(a);
+      k.add(a.toUpperCase());
+      System.out.println(v.lastElement());
+      
+    }
+    
+}
+
+Qestion no 5:
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package q5;
+
+import java.util.Vector;
+
+/**
+ *
+ * @author fa16-bse-187
+ */
+public class Q5 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+       Vector v=new Vector();
+      Vector k=v;
+      if(k==v){
+          System.out.println("same");
+      }
+      else{
+          System.out.println("difference");
+      }
+    }
+    
+}
+
+
+Qestion no 6:
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package q7;
+
+import java.util.Vector;
+
+/**
+ *
+ * @author fa16-bse-187
+ */
+public class Q7 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+           Vector v=new Vector();
+           Vector k=new Vector();
+      
+      if(k==v){
+          System.out.println("same");
+      }
+      else{
+          System.out.println("difference");
+      }
+    }
+}
+
+    }
+    
+}
+
+
+Qestion no 7:
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package q8;
+
+/**
+ *
+ * @author fa16-bse-187
+ */
+public class Q8 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+          String a="zeeb";
+          String b="zeeb";
+      if(a==b)
+          System.out.println("same");
+      
+      else{
+          System.out.println("difference");
+      
+    }
+    
+    }
+    
+}
+
+
+Qestion no 8:
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package q9;
+
+/**
+ *
+ * @author fa16-bse-187
+ */
+public class Q9 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+       String a=null;
+       System.out.println(a);
+    }
+    
+}

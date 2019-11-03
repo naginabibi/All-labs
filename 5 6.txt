@@ -1,0 +1,292 @@
+                                                         Lab  5 & 6
+Factory Pattern
+package factorydemo;
+import factorydemo.Color.Color;
+import Shapes.Shape;
+
+/**
+ *
+ * @author COMSAT
+ */
+public abstract class AbstructFactory {
+        public abstract Shape getShape(String ShapeName);
+    public abstract Color getColor(String ColorName);
+} 
+package factorydemo;
+import Shapes.Shape;
+import Shapes.ShapeFactory;
+import java.io.*;
+
+/**
+ *
+ * @author COMSAT
+ */
+public class FactoryDemo {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws IOException {
+        
+        
+        
+        
+                BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String choice;
+        Shape shapeselected;
+        System.out.println("Enter Shape: ");
+        choice = br.readLine();
+        ShapeFactory factory = new ShapeFactory();
+        shapeselected = factory.getShape(choice);
+        shapeselected.draw();
+        System.out.println("Enter Color: ");
+        choice = br.readLine();
+        FactoryProducer fobj = new FactoryProducer();
+        AbstructFactory ffobj = fobj.getFactory("color");
+        ffobj.getColor(choice).fill();
+        
+    }
+
+    }
+
+
+
+package factorydemo;
+import factorydemo.ColorFactory;
+import Shapes.ShapeFactory;
+/**
+ *
+ * @author COMSAT
+ */
+public class FactoryProducer {
+    
+   
+
+
+    public ColorFactory getFactory(String choice){
+        if(choice.equalsIgnoreCase("shape")){
+            return new ShapeFactory();
+        }else if(choice.equalsIgnoreCase("color")){
+            return new ColorFactory();
+        }
+        return null;
+    }
+
+    AbstructFactory getFactory(String color) {
+        throw new UnsupportedOperationException("Not supported yet."); 
+    }
+}
+ 
+
+
+package factorydemo;
+import factorydemo.Shape;
+/**
+ *
+ * @author COMSAT
+ */
+public class Cicle implements Shape {
+
+    Cicle() {
+        throw new UnsupportedOperationException("Not supported yet.");    }
+ 
+
+
+ 
+    public void draw() {
+       System.out.println("Circle Draw");
+    }
+   }
+ 
+
+package factorydemo;
+import factorydemo.Shape;
+/**
+ *
+ * @author COMSAT
+ */
+public class Rectangular implements Shape {
+    
+
+
+    
+    public void draw() {
+       System.out.println("Rectangle Draw");
+    }
+}
+ 
+
+package factorydemo;
+
+/**
+ *
+ * @author COMSAT
+ */
+public interface Shape {
+  
+
+    public void draw();
+
+    public static class Shape {
+
+        public Shape() {
+        }
+    }
+}
+ 
+package factorydemo;
+import Colors.Color;
+import Shapes.Shape;
+import patterns.AbstractFactory;
+/**
+ *
+ * @author COMSAT
+ */
+public class ShapeFactory extends AbstractFactory{
+    
+
+
+    
+    public Shape getShape(String ShapeName){
+        if(ShapeName.equals("Circle")){
+            return this.getCircle();
+        }else if(ShapeName.equals("Square")){
+            return this.getSquare();
+        }else if(ShapeName.equals("Rectangle")){
+            return this.getRectangle();
+        }
+        return null;
+    }
+     public Shape getCircle(){
+        return new Cicle();
+    }
+       public Shape getSquare(){
+        return new Square();
+    }
+   public Shape getRectangle(){
+        return new Rectangular();
+    }
+    public Color getColor(String ColorName) {
+        return null;
+    }}
+ 
+
+package factorydemo;
+    
+import Shapes.Shape;
+/**
+ *
+ * @author COMSAT
+ */
+public class Square implements Shape{
+
+
+    
+    public void draw() {
+       System.out.println("Square Draw");
+    }
+}
+ 
+
+package factorydemo;
+import Shapes.Shape;
+import patterns.AbstructFactory;
+/**
+ *
+ * @author COMSAT
+ */
+public class ColorFactory extends AbstructFactory {
+
+    ColorFactory() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    ColorFactory() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+   
+
+
+    
+    public Color getColor(String ColorName){
+        if(ColorName.equals("Blue")){
+            return this.getBlue();
+        }else if(ColorName.equals("Red")){
+            return this.getRed();
+        }else if(ColorName.equals("Green")){
+            return this.getGreen();
+        }
+        return null;
+    }
+       public Color getRed(){
+        return new Red();
+    }
+     public Color getGreen(){
+        return new Green();
+    }
+     public Color getBlue(){
+        return new Blue();
+     }
+    public Shape getShape(String ShapeName) {
+        return null;
+    }
+
+}
+
+
+package factorydemo;
+
+/**
+ *
+ * @author COMSAT
+ */
+public interface Color {
+    
+
+    public void fill();
+}
+
+ 
+package factorydemo;
+
+/**
+ *
+ * @author COMSAT
+ */
+public class Red implements Color{
+ 
+ 
+    public void fill() {
+        System.out.println("Red Filled");
+    }
+   }
+ 
+
+package factorydemo;
+
+/**
+ *
+ * @author COMSAT
+ */
+public class Blue implements Color{
+    
+
+    public void fill() {
+        System.out.println("Red Filled");
+    }
+}
+ 
+package factorydemo;
+
+/**
+ *
+ * @author COMSAT
+ */
+public class Green implements Color {
+ 
+    
+
+    public void fill() {
+        System.out.println("Red Filled");
+    }
+}
